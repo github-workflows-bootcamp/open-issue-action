@@ -2,3 +2,6 @@ dist/
 node_modules/
 coverage/
 workflows/
+
+action.yml
+README.md

@@ -11,6 +11,7 @@ async function run() {
     const title = core.getInput('title')
     const body = core.getInput('body')
     const assignees = core.getInput('assignees')
+    const labels = core.getInput('labels')
 
     const { owner, repo } = gh.context.repo
     const payload = {
@@ -18,8 +19,8 @@ async function run() {
       repo,
       title,
       body,
+      labels: labels ? labels.split('\n') : undefined,
       assignees: assignees ? assignees.split('\n') : undefined,
-      labels: ['bug'],
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
       }

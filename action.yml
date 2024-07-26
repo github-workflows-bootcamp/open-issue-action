@@ -12,8 +12,13 @@ inputs:
     required: true
   body:
     description: 'Github body'
+    required: false
   assignees:
     description: 'Issue Assignees'
+    required: false
+  labels:
+    description: 'Bug, Enhancement, etc.'
+    required: false
 
 # Define your outputs here.
 outputs:

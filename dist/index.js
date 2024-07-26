@@ -29195,6 +29195,8 @@ const { Octokit } = __nccwpck_require__(6762)
 const core = __nccwpck_require__(2186)
 const gh = __nccwpck_require__(5438)
 
+// Create an issue in the repository
+// https://docs.github.com/pt/rest/issues/issues?apiVersion=2022-11-28#create-an-issue
 async function run() {
   try {
     console.log(`Getting data from action`)
@@ -29202,6 +29204,7 @@ async function run() {
     const title = core.getInput('title')
     const body = core.getInput('body')
     const assignees = core.getInput('assignees')
+    const labels = core.getInput('labels')
 
     const { owner, repo } = gh.context.repo
     const payload = {
@@ -29209,8 +29212,8 @@ async function run() {
       repo,
       title,
       body,
+      labels: labels ? labels.split('\n') : undefined,
       assignees: assignees ? assignees.split('\n') : undefined,
-      labels: ['bug'],
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
       }
@@ -29224,7 +29227,7 @@ async function run() {
     )
 
     console.log(`Issue opened for by ${owner}`)
-    core.setOutput('issue', response.data)
+    core.setOutput('issue', { ok: 'true' })
   } catch (error) {
     console.log(error)
     // Fail the workflow run if an error occurs
