@@ -1,6 +1,6 @@
 name: 'ifoxxiedev/open-issue'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+description: 'Open Issue on Github'
+author: 'ifoxxiedev'
 
 # Define your inputs here.
 inputs:
