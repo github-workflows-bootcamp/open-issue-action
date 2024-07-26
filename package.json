@@ -3,6 +3,7 @@
   "description": "GitHub Actions JavaScript Template",
   "version": "0.0.0",
   "author": "",
+  "main": "dist/index.js",
   "private": true,
   "homepage": "https://github.com/actions/javascript-action#readme",
   "repository": {
