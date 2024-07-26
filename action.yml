@@ -4,15 +4,21 @@ author: 'Your name or organization here'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  token:
+    description: 'Github token'
     required: true
-    default: '1000'
+  title:
+    description: 'Issue title'
+    required: true
+  body:
+    description: 'Github body'
+  assignees:
+    description: 'Issue Assignees'
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  issue:
+    description: 'Your issue object as a json string'
 
 runs:
   using: node20
