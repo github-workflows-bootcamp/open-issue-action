@@ -2,6 +2,8 @@ const { Octokit } = require('@octokit/core')
 const core = require('@actions/core')
 const gh = require('@actions/github')
 
+// Create an issue in the repository
+// https://docs.github.com/pt/rest/issues/issues?apiVersion=2022-11-28#create-an-issue
 async function run() {
   try {
     console.log(`Getting data from action`)

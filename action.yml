@@ -23,3 +23,8 @@ outputs:
 runs:
   using: node20
   main: dist/index.js
+
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#branding
+branding:
+  icon: 'alert-circle'
+  color: 'yellow'
