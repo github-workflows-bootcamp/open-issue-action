@@ -1,4 +1,4 @@
-import { Octokit } from '@octokit/core'
+const { Octokit } = require('@octokit/core')
 const core = require('@actions/core')
 const gh = require('@actions/github')
 
