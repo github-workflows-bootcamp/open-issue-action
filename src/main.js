@@ -25,7 +25,13 @@ async function run() {
       `Opening issue for ${repo} by ${owner} with data ${JSON.stringify(payload, null, 2)}`
     )
 
-    const response = await octokit.rest.issues.create(payload)
+    const response = await octokit.rest.issues.create({
+      ...payload,
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28',
+        accept: 'application/vnd.github.v3+json'
+      }
+    })
 
     console.log(`Issue opened for by ${owner}`)
     core.setOutput('issue', response.data)
