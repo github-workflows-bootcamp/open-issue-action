@@ -33,7 +33,7 @@ async function run() {
     )
 
     console.log(`Issue opened for by ${owner}`)
-    core.setOutput('issue', response.data)
+    core.setOutput('issue', { ok: 'true' })
   } catch (error) {
     console.log(error)
     // Fail the workflow run if an error occurs
