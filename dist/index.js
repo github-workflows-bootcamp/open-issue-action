@@ -29219,7 +29219,7 @@ async function run() {
     console.log(`Authenticating with token ${token}`)
     const octokit = new Octokit({ auth: token })
     const response = await octokit.request(
-      'POST /repos/{owner}/{repo}/issues',
+      `POST /repos/${owner}/${repo}/issues`,
       payload
     )
 
