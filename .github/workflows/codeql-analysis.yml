@@ -11,15 +11,14 @@
 #
 name: CodeQL
 
+
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  schedule:
-    - cron: '24 5 * * 6'
+  workflow_dispatch:
+    inputs:
+      enabled: 
+        description: 'Run CodeQL Analysis'
+        required: false
+        default: 'true'
 
 permissions:
   actions: read

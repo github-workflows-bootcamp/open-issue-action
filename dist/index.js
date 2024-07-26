@@ -29202,19 +29202,23 @@ async function run() {
     const body = core.getInput('body')
     const assignees = core.getInput('assignees')
 
-    console.log(`Authenticating with token`)
-    const octokit = await gh.getOctokit(token)
+    console.log(`Authenticating with token ${token}`)
+    const octokit = gh.getOctokit(token)
 
     const { owner, repo } = gh.context.repo
-    console.log(`Opening issue for ${repo} by ${owner}`)
-
-    const response = await octokit.rest.issues.create({
+    const payload = {
       owner,
       repo,
       title,
       body,
       assignees: assignees ? assignees.split('\n') : undefined
-    })
+    }
+
+    console.log(
+      `Opening issue for ${repo} by ${owner} with data ${JSON.stringify(payload, null, 2)}`
+    )
+
+    const response = await octokit.rest.issues.create(payload)
 
     console.log(`Issue opened for by ${owner}`)
     core.setOutput('issue', response.data)
