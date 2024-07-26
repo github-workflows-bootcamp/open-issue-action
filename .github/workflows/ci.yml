@@ -60,9 +60,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "Test Issue"
           body: "This is a test issue."
-          assignees: |
-           alialaaa
-           ifoxxiedev
 
       - name: Print Output
         id: output
